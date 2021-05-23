@@ -37,11 +37,13 @@ ht_t *init_ht(void)
 void print_table(ht_t *ht)
 {
     for (int i = 0; i < ht->size; i++) {
-        if (check_ht_item(ht->items[i]))
+        ht_item_t *tmp = ht->items[i];
+        if (check_ht_item(tmp))
             continue;
-        else if (ht->items[i] == DELETED_NODE)
-            my_printf("\t%d\t-----<deleted>\n", i);
+        my_printf("\tID[%d]: ", i);
+        if (tmp == DELETED_NODE)
+            my_printf("<deleted>\n");
         else
-            my_printf("\t%d = %s\n", i, ht->items[i]->value);
+            my_printf("%s = %s\n", tmp->key, tmp->value);
     }
 }

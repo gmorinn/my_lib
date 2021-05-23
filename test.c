@@ -20,12 +20,12 @@ int main(void)
     ht_insert(ht, "key 8", "corewar");
     ht_insert(ht, "key 9", "rpg");
     ht_insert(ht, "key 10", "cssst");
+    ht_insert(ht, "key 520", "ffghj rtyu tyu");
     print_table(ht);
     my_printf("\n");
-    ht_insert(ht, "key 9", "tek 2");
-    ht_delete("key 5", &ht->items);
-    ht_delete("ddd", &ht->items);
-    ht_delete("key 7", &ht->items);
+    // ht_insert(ht, "key 9", "tek 2");
+    char *tmp = ht_search("key 3", ht);
+    if (tmp != NULL) my_putstr(tmp);
     print_table(ht);
     ht_delete_all(&ht);
     return 0;

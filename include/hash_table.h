@@ -11,7 +11,7 @@
 #include "lib.h"
 
 #define DELETED_NODE    (ht_item_t *)(0xFFFFFFFFFFFF)
-#define SIZE 50
+#define SIZE 97
 
 typedef struct ht_item_s
 {
@@ -35,7 +35,7 @@ ht_item_t **init_items(int size);
 ht_item_t *new_item(char *value, int key);
 void ht_delete_all(ht_t **ht);
 void ht_delete(char *key, ht_item_t ***hash_table);
-ht_item_t *ht_search(char *str, ht_t *ht);
+char *ht_search(char *key, ht_t *ht);
 void print_table(ht_t *ht);
 void free_item_ht(ht_item_t **hash_table);
 ht_t *ht_new();

@@ -7,19 +7,18 @@
 
 #include "../../include/lib.h"
 
-ht_item_t *ht_search(char *str, ht_t *ht)
+char *ht_search(char *key, ht_t *ht)
 {
-    int index = hash(str);
+    int index = hash(key);
 
-    for (int i = 0; i < ht->size; i++) {
-        index = (i + index) % ht->size;
-        if (check_ht_item((ht->items[index])))
+    for (int i = 0; i < SIZE; i++) {
+        index = (index + i) % SIZE;
+        if (check_ht_item(ht->items[index]))
             return NULL;
-        if (ht->items[index] == DELETED_NODE)
+        else if (ht->items[index] == DELETED_NODE)
             continue;
-        if (!check_ht_item(ht->items[index])
-            && !my_strcmp(ht->items[index]->value, str))
-                return ht->items[index];
+        else if (!my_strcmp(ht->items[index]->key, key))
+                return ht->items[index]->value;
     }
     return NULL;
 }
