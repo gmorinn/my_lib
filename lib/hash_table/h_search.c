@@ -18,7 +18,7 @@ ht_item_t *ht_search(char *str, ht_t *ht)
         if (ht->items[index] == DELETED_NODE)
             continue;
         if (!check_ht_item(ht->items[index])
-            && !my_strcmp(ht->items[index]->str, str))
+            && !my_strcmp(ht->items[index]->value, str))
                 return ht->items[index];
     }
     return NULL;

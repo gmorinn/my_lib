@@ -29,7 +29,7 @@ ht_item_t **init_items(int size)
 ht_t *init_ht(void)
 {
     ht_t *ht = malloc(sizeof(ht_t));
-    ht->size = 10;
+    ht->size = SIZE;
     ht->items = init_items(ht->size);
     return ht;
 }
@@ -38,10 +38,10 @@ void print_table(ht_t *ht)
 {
     for (int i = 0; i < ht->size; i++) {
         if (check_ht_item(ht->items[i]))
-            my_printf("\t%d\t-----\n", i);
+            continue;
         else if (ht->items[i] == DELETED_NODE)
             my_printf("\t%d\t-----<deleted>\n", i);
         else
-            my_printf("\t%d = %s\n", i, ht->items[i]->str);
+            my_printf("\t%d = %s\n", i, ht->items[i]->value);
     }
 }

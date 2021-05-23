@@ -11,12 +11,13 @@
 #include "lib.h"
 
 #define DELETED_NODE    (ht_item_t *)(0xFFFFFFFFFFFF)
-#define SIZE 10
+#define SIZE 50
 
 typedef struct ht_item_s
 {
-    char *str;
+    char *value;
     char *key;
+    struct ht_item_t *next;
 } ht_item_t;
 
 typedef struct ht_s
@@ -27,13 +28,13 @@ typedef struct ht_s
 } ht_t;
 
 int hash(char *str);
-ht_item_t *new_table(char *value);
-void ht_insert(ht_t **ht, char *value);
+ht_item_t *new_table(char *key, char *value);
+void ht_insert(ht_t *ht, char *key, char *value);
 ht_t *init_ht(void);
 ht_item_t **init_items(int size);
 ht_item_t *new_item(char *value, int key);
 void ht_delete_all(ht_t **ht);
-void ht_delete(char *str, ht_item_t ***hash_table);
+void ht_delete(char *key, ht_item_t ***hash_table);
 ht_item_t *ht_search(char *str, ht_t *ht);
 void print_table(ht_t *ht);
 void free_item_ht(ht_item_t **hash_table);
