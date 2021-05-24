@@ -9,24 +9,28 @@
 
 int main(void)
 {
-    ht_t *ht = init_ht();
-    ht_insert(ht, "key 1", "toto");
-    ht_insert(ht, "key 2", "ee");
-    ht_insert(ht, "key 3", "titi");
-    ht_insert(ht, "key 4", "42");
-    ht_insert(ht, "key 5", "60 credits");
-    ht_insert(ht, "key 6", "epitech");
-    ht_insert(ht, "key 7", "shell");
-    ht_insert(ht, "key 8", "corewar");
-    ht_insert(ht, "key 9", "rpg");
-    ht_insert(ht, "key 10", "cssst");
-    ht_insert(ht, "key 520", "ffghj rtyu tyu");
-    print_table(ht);
-    my_printf("\n");
-    // ht_insert(ht, "key 9", "tek 2");
-    char *tmp = ht_search("key 3", ht);
-    if (tmp != NULL) my_putstr(tmp);
-    print_table(ht);
-    ht_delete_all(&ht);
+    list *a = new_list();
+    a = put_end(a, "11111");
+    a = put_end(a, "22222");
+    a = put_end(a, "33333");
+    a = put_end(a, "3ffg3333");
+    a = put_end(a, "55555");
+    a = put_end(a, "66666");
+    a = put_end(a, "55555");
+    a = put_middle(a, "milieu", 4);
+    display(&a);
+    my_printf("\t%d %d\n", position_str(a, "11111"), search_element("55555", a));
+    if (check_list(a))
+        my_printf("vide\n");
+    else
+        display(&a);
+    my_printf("---------------------------------\n");
+    list *tmp = copylist(a->next);
+    my_printf("%s", tmp->str);
+    rm_list(&a);
+    if (check_list(a))
+        my_printf("vide\n");
+    else
+        display(&a);
     return 0;
 }

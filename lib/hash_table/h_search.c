@@ -13,7 +13,7 @@ char *ht_search(char *key, ht_t *ht)
 
     for (int i = 0; i < SIZE; i++) {
         index = (index + i) % SIZE;
-        if (check_ht_item(ht->items[index]))
+        if (IS_ITEM(ht->items[index]))
             return NULL;
         else if (ht->items[index] == DELETED_NODE)
             continue;

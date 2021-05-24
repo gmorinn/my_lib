@@ -9,6 +9,7 @@
 #define LINKED_LIST_H_
 
 #include "lib.h"
+#define IS_LIST(i) check_list(i)
 
 typedef struct list list;
 struct list

@@ -30,7 +30,7 @@ void display(list **a)
 
 list *copylist(list* head)
 {
-    list* newNode = malloc(sizeof(list));
+    list* newNode = MALLOC(newNode, sizeof(list));
     newNode->str = head->str;
     newNode->next = NULL;
     return newNode;

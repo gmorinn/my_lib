@@ -11,9 +11,9 @@ void rm_list(list **li)
 {
     list *tmp = (*li);
     list *next = new_list();
-    if (check_list(tmp))
+    if (IS_LIST(tmp))
         return;
-    while (!check_list(tmp)) {
+    while (!IS_LIST(tmp)) {
         next = tmp->next;
         free(tmp);
         tmp = next;
@@ -23,9 +23,9 @@ void rm_list(list **li)
 
 list *rm_element(list *li)
 {
-    if (check_list(li))
+    if (IS_LIST(li))
         return (li);
-    list *element = malloc(sizeof(list));
+    list *element = MALLOC(element, sizeof(list));
     element = li->next;
     free(li);
     li = new_list();
@@ -34,7 +34,7 @@ list *rm_element(list *li)
 
 void rm_at_pos(list **a, int pos)
 {
-    if (check_list(*a))
+    if (IS_LIST(*a))
         return;
     list *tmp = (*a);
     if (pos == 0) {
@@ -42,9 +42,9 @@ void rm_at_pos(list **a, int pos)
         free(tmp);
         return;
     }
-    for (int i = 0; (!check_list(tmp)) && (i < pos - 1); i++)
+    for (int i = 0; (!IS_LIST(tmp)) && (i < pos - 1); i++)
         tmp = tmp->next;
-    if (check_list(tmp) || check_list(tmp->next))
+    if (IS_LIST(tmp) || IS_LIST(tmp->next))
         return;
     list *node = tmp->next->next;
     free(tmp->next);

@@ -10,7 +10,7 @@
 void ht_delete_all(ht_t **ht)
 {
     for (int i = 0; i < SIZE; i++) {
-        if (!check_ht_item((*ht)->items[i]) && (*ht)->items[i] != DELETED_NODE)
+        if (!IS_ITEM((*ht)->items[i]) && (*ht)->items[i] != DELETED_NODE)
             ht_delete((*ht)->items[i]->key, &(*ht)->items);
         }
     free((*ht)->items);
@@ -23,7 +23,7 @@ void ht_delete(char *key, ht_item_t ***hash_table)
 
     for (int i = 0; i < SIZE; i++) {
         index = (i + index) % SIZE;
-        if (check_ht_item((*hash_table)[index]))
+        if (IS_ITEM((*hash_table)[index]))
             continue;
         else if ((*hash_table)[index] == DELETED_NODE)
             continue;

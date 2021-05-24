@@ -11,7 +11,7 @@ int position_str(list *a, char *str)
 {
     int lenght = 0;
     list *tmp = a;
-    while (!(check_list(tmp))) {
+    while (!(IS_LIST(tmp))) {
         if (my_strcmp(str, tmp->str) == 0)
             return lenght;
         lenght++;
@@ -24,7 +24,7 @@ my_bool search_element(char *var, list *a)
 {
     list *tmp = a;
 
-    while (!check_list(tmp)) {
+    while (!IS_LIST(tmp)) {
         if (my_strcmp(var, tmp->str) == 0)
             return true;
         tmp = tmp->next;
@@ -35,7 +35,7 @@ my_bool search_element(char *var, list *a)
 int list_lenght(list *li)
 {
     int size = 0;
-    while (!(check_list(li))) {
+    while (!(IS_LIST(li))) {
         ++size;
         li = li->next;
     }

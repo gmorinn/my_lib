@@ -10,7 +10,7 @@
 
 ht_item_t *new_table(char *key, char *value)
 {
-    ht_item_t *tmp = malloc(sizeof(ht_item_t));
+    ht_item_t *tmp = MALLOC(tmp, sizeof(ht_item_t));
     tmp->key = my_strdup(key);
     tmp->value = my_strdup(value);
     return tmp;
@@ -20,7 +20,7 @@ void ht_insert_item(char *key, char *value, ht_t *ht, int index)
 {
     for (int i = 0; i < SIZE; i++) {
         index = (index + i) % SIZE;
-        if (check_ht_item(ht->items[index])) {
+        if (IS_ITEM(ht->items[index])) {
             ht->items[index] = new_table(key, value);
             return;
         }
@@ -40,7 +40,7 @@ void ht_insert(ht_t *ht, char *key, char *value)
 {
     int index = 0;
 
-    if (check_str(key) || check_str(value) || !my_strncmp("key ", key, 3)) {
+    if (IS_STR(key) || IS_STR(value) || !my_strncmp("key ", key, 3)) {
         my_printf("KEY IS INVALID!\n");
         return;
     }

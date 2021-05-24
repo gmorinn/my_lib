@@ -12,6 +12,7 @@
 
 #define DELETED_NODE    (ht_item_t *)(0xFFFFFFFFFFFF)
 #define SIZE 97
+#define IS_ITEM(i) check_ht_item(i)
 
 typedef struct ht_item_s
 {

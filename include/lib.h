@@ -19,6 +19,9 @@ typedef int my_bool;
 #define true 1
 #define false 0
 #define EOF '\0'
+#define IS_STR(i) check_str(i)
+#define IS_TAB(i) check_tab(i)
+#define MALLOC(src, size) src = malloc(size); if (!src) return (NULL);
 
 void my_putchar(char c);
 int	my_pow(int nb, int pow);
