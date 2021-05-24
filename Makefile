@@ -13,6 +13,7 @@ PRINTF =	$(wildcard *.c lib/*.c \
 					lib/numbers/*.c \
 					lib/tab/*.c \
 					lib/malloc/*.c \
+					lib/binary_tree/*.c \
 					lib/hash_table/*.c)
 
 SRC		=	test.c

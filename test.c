@@ -9,28 +9,13 @@
 
 int main(void)
 {
-    list *a = new_list();
-    a = put_end(a, "11111");
-    a = put_end(a, "22222");
-    a = put_end(a, "33333");
-    a = put_end(a, "3ffg3333");
-    a = put_end(a, "55555");
-    a = put_end(a, "66666");
-    a = put_end(a, "55555");
-    a = put_middle(a, "milieu", 4);
-    display(&a);
-    my_printf("\t%d %d\n", position_str(a, "11111"), search_element("55555", a));
-    if (check_list(a))
-        my_printf("vide\n");
-    else
-        display(&a);
-    my_printf("---------------------------------\n");
-    list *tmp = copylist(a->next);
-    my_printf("%s", tmp->str);
-    rm_list(&a);
-    if (check_list(a))
-        my_printf("vide\n");
-    else
-        display(&a);
+    tree_t *tmp = join_tree(join_tree(new_tree(8), new_tree(3), 2),
+                new_tree(4),
+                6);
+    my_printf("%d, left = %d et right = %d\n", tmp->value, tmp->left->value, tmp->right->value);
+    my_printf("SOUS LEFT %d ET SOUS RIGHT %d OF %d\n\n", tmp->left->left->value, tmp->left->right->value, tmp->left->value);
+    print_tree(tmp);
+    my_printf("NB NODE => %d\n", nb_node_tree(tmp));
+    rm_tree(tmp);
     return 0;
 }

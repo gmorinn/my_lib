@@ -18,7 +18,6 @@ typedef struct ht_item_s
 {
     char *value;
     char *key;
-    struct ht_item_t *next;
 } ht_item_t;
 
 typedef struct ht_s
