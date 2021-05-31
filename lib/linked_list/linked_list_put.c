@@ -7,10 +7,10 @@
 
 #include "../../include/lib.h"
 
-list *put_end(list *a, char *str)
+list_t *put_end(list_t *a, char *str)
 {
-    list *tmp = new_list();
-    list *element = MALLOC(element, sizeof(list));
+    list_t *tmp = new_list();
+    list_t *element = MALLOC(element, sizeof(list_t));
     element->str = str;
     element->next = NULL;
     if (IS_LIST(a))
@@ -22,21 +22,21 @@ list *put_end(list *a, char *str)
     return (a);
 }
 
-list *put_begin(list *test, char *str)
+list_t *put_begin(list_t *test, char *str)
 {
-    list *new = MALLOC(new, sizeof(list));
+    list_t *new = MALLOC(new, sizeof(list_t));
     new->str = str;
     new->next = test;
     test = new;
     return (test);
 }
 
-list *put_middle(list *a, char *str, int pos)
+list_t *put_middle(list_t *a, char *str, int pos)
 {
     int i = 0;
-    list *prev = new_list();
-    list *current;
-    list *new = MALLOC(new, sizeof(list));
+    list_t *prev = new_list();
+    list_t *current;
+    list_t *new = MALLOC(new, sizeof(list_t));
     new->str = str;
     for (current = a; !IS_LIST(current); i += 1) {
         if (i >= pos)

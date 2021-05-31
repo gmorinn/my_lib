@@ -36,8 +36,12 @@ ht_t *init_ht(void)
 
 void print_table(ht_t *ht)
 {
+    ht_item_t *tmp = NULL;
+
+    if (ht == NULL)
+        return;
     for (int i = 0; i < ht->size; i++) {
-        ht_item_t *tmp = ht->items[i];
+        tmp = ht->items[i];
         if (IS_ITEM(tmp))
             continue;
         my_printf("\tID[%d]: ", i);

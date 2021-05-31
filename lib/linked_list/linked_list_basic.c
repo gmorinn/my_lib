@@ -7,31 +7,31 @@
 
 #include "../../include/lib.h"
 
-my_bool check_list(list *li)
+my_bool check_list(list_t *li)
 {
     if (li == NULL)
         return (true);
     return (false);
 }
 
-list *new_list(void)
+list_t *new_list(void)
 {
     return (NULL);
 }
 
-void display(list **a)
+void display(list_t **a)
 {
-    list *tmp = (*a);
+    list_t *tmp = (*a);
     while (tmp != NULL) {
         my_printf("%s\n", tmp->str);
         tmp = tmp->next;
     }
 }
 
-list *copylist(list* head)
+list_t *copylist(list_t *head)
 {
-    list* newNode = MALLOC(newNode, sizeof(list));
-    newNode->str = head->str;
-    newNode->next = NULL;
-    return newNode;
+    list_t *newnode = MALLOC(newnode, sizeof(list_t));
+    newnode->str = head->str;
+    newnode->next = NULL;
+    return newnode;
 }

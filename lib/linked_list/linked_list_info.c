@@ -7,10 +7,10 @@
 
 #include "../../include/lib.h"
 
-int position_str(list *a, char *str)
+int position_str(list_t *a, char *str)
 {
     int lenght = 0;
-    list *tmp = a;
+    list_t *tmp = a;
     while (!(IS_LIST(tmp))) {
         if (my_strcmp(str, tmp->str) == 0)
             return lenght;
@@ -20,9 +20,9 @@ int position_str(list *a, char *str)
     return 84;
 }
 
-my_bool search_element(char *var, list *a)
+my_bool search_element(char *var, list_t *a)
 {
-    list *tmp = a;
+    list_t *tmp = a;
 
     while (!IS_LIST(tmp)) {
         if (my_strcmp(var, tmp->str) == 0)
@@ -32,7 +32,7 @@ my_bool search_element(char *var, list *a)
     return false;
 }
 
-int list_lenght(list *li)
+int list_lenght(list_t *li)
 {
     int size = 0;
     while (!(IS_LIST(li))) {

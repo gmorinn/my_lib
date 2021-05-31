@@ -15,6 +15,8 @@
 #include "hash_table.h"
 #include "printf.h"
 #include "binary_tree.h"
+#include "oriented_object.h"
+#include "graph.h"
 
 typedef int my_bool;
 #define true 1
@@ -24,6 +26,7 @@ typedef int my_bool;
 #define IS_TAB(i) check_tab(i)
 #define MALLOC(src, size) src = malloc(size); if (!src) \
                         return (my_putstr("ERROR MALLOC\n"), NULL);
+#define FREE(var) if (var == NULL) return; free(var); var = NULL;
 
 void my_putchar(char c);
 int	my_pow(int nb, int pow);

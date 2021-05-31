@@ -13,8 +13,9 @@ void ht_delete_all(ht_t **ht)
         if (!IS_ITEM((*ht)->items[i]) && (*ht)->items[i] != DELETED_NODE)
             ht_delete((*ht)->items[i]->key, &(*ht)->items);
         }
-    free((*ht)->items);
+    FREE((*ht)->items);
     free(*ht);
+    (*ht) = NULL;
 }
 
 void ht_delete(char *key, ht_item_t ***hash_table)

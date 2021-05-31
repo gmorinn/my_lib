@@ -27,10 +27,8 @@ void free_tab(char ***tab)
 
 void free_item_ht(ht_item_t **hash_table)
 {
-    free((*hash_table)->value);
-    (*hash_table)->value = NULL;
-    free((*hash_table)->key);
-    (*hash_table)->key = NULL;
+    FREE((*hash_table)->value);
+    FREE((*hash_table)->key);
     free((*hash_table));
     (*hash_table) = DELETED_NODE;
 }

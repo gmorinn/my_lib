@@ -14,9 +14,10 @@ PRINTF =	$(wildcard *.c lib/*.c \
 					lib/tab/*.c \
 					lib/malloc/*.c \
 					lib/binary_tree/*.c \
-					lib/hash_table/*.c)
+					lib/hash_table/*.c \
+					lib/oriented_object/*.c)
 
-SRC		=	test.c
+SRC		=	main.c
 
 NAME	=		test
 

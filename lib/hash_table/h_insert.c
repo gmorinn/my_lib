@@ -38,7 +38,7 @@ int check_key(ht_t *ht, char *key)
 
 void ht_insert(ht_t *ht, char *key, char *value)
 {
-    int index = 0;
+    int index;
 
     if (IS_STR(key) || IS_STR(value) || !my_strncmp("key ", key, 3)) {
         my_printf("KEY IS INVALID!\n");
