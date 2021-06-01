@@ -15,7 +15,8 @@ PRINTF =	$(wildcard *.c lib/*.c \
 					lib/malloc/*.c \
 					lib/binary_tree/*.c \
 					lib/hash_table/*.c \
-					lib/oriented_object/*.c)
+					lib/oriented_object/*.c \
+					lib/graph/*.c)
 
 SRC		=	main.c
 
