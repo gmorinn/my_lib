@@ -15,4 +15,5 @@ char *op_get(op_t *this, int index)
             return tmp->str;
         tmp = tmp->next;
     }
+    return "NULL";
 }
