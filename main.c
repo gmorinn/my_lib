@@ -20,13 +20,13 @@ int main(void)
     tmp->op_print(tmp);
     my_printf("------\n");
 
-    my_printf("Get value of 4: %s\n", tmp->op_get(tmp, 4));
+    my_printf("Get value of %d: %s\n", tmp->op_search(tmp, "Guillaume"), tmp->op_get(tmp, 4));
     tmp->op_set_str(&tmp, 4, "MORIN");
     my_printf("----Change Value of 4-----\n");
     my_printf("Get value of 4: %s\n", tmp->op_get(tmp, 4));
     my_printf("------");
     my_printf("Nb d'elements : %d\n", tmp->op_length(tmp));
-    my_printf("------");
+    my_printf("------\nLength: %d\n----", tmp->op_length(tmp));
 
     my_printf("Deux valeurs soutirees de la pile: ");
     my_printf("%d - %d\n", tmp->op_rm_last(tmp), tmp->op_rm_last(tmp));

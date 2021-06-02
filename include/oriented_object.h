@@ -28,6 +28,7 @@ struct op_s
     void (*op_set_str)(op_t **, int, char *);
     void (*op_rm_all)(op_t *);
     void (*op_clear)(op_t *);
+    int (*op_search)(op_t *, char *);
     char *(*op_get)(op_t *, int);
 
     int lenght;
@@ -35,6 +36,7 @@ struct op_s
 };
 
 void op_clear(op_t *this);
+int op_search(op_t *this, char *str);
 void op_put_end(op_t *this, int nb, char *str);
 void op_set_str(op_t **this, int index, char *str);
 void op_rm_all(op_t *this);

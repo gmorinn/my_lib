@@ -17,6 +17,7 @@ void init_op(op_t **this)
     (*this)->op_set_str = op_set_str;
     (*this)->op_rm_all = op_rm_all;
     (*this)->lenght = 0;
+    (*this)->op_search = op_search;
     (*this)->op_get = op_get;
     (*this)->top = NULL;
 }

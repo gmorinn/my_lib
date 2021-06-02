@@ -20,7 +20,7 @@ PRINTF =	$(wildcard *.c lib/*.c \
 
 SRC		=	main.c
 
-NAME	=		test
+NAME	=		a.out
 
 LIB		=		libmy.a
 
