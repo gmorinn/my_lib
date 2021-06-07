@@ -20,10 +20,10 @@ void rm_graph(graph_t *g)
             while (node != NULL) {
                 tmp = node;
                 node = node->next;
-                free(tmp);
+                FREE(tmp);
             }
         }
-        free(g->tab_neighbours);
+        FREE(g->tab_neighbours);
     }
-    free(g);
+    FREE(g);
 }

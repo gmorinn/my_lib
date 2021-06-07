@@ -22,7 +22,7 @@ char *trim(char *str)
         if (is_space(str[i]))
             size++;
     }
-    ptr = malloc(sizeof(char) * (my_strlen(str) - size + 1));
+    ptr = MALLOC(ptr, sizeof(char) * (my_strlen(str) - size + 1));
     for (int i = 0; !check_char(str[i]); i++) {
         if (!is_space(str[i])) {
             ptr[x] = str[i];

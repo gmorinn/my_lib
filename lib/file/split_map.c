@@ -32,7 +32,7 @@ char **my_split(char *str, char split)
 {
     int j = 0;
     int k = 0;
-    char **temp = malloc(sizeof(char *) * (split_word(str, split) + 1));
+    char **temp = MALLOC(temp, sizeof(char *) * (split_word(str, split) + 1));
     for (int i = 0; str[i] != '\0'; i++) {
         temp[j] = malloc(sizeof(char) * (lenght_split(str + i, split) + 1));
         k = 0;

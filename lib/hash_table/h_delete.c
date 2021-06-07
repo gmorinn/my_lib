@@ -14,7 +14,7 @@ void ht_delete_all(ht_t **ht)
             ht_delete((*ht)->items[i]->key, &(*ht)->items);
         }
     FREE((*ht)->items);
-    free(*ht);
+    FREE(*ht);
     (*ht) = NULL;
 }
 

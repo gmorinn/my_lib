@@ -11,8 +11,8 @@
 ht_item_t *new_table(char *key, char *value)
 {
     ht_item_t *tmp = MALLOC(tmp, sizeof(ht_item_t));
-    tmp->key = my_strdup(key);
-    tmp->value = my_strdup(value);
+    tmp->key = IS_NULL(key);
+    tmp->value = IS_NULL(value);
     return tmp;
 }
 

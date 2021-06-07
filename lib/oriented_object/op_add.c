@@ -11,7 +11,7 @@ void op_put_end(op_t *this, int nb, char *str)
 {
     op_item_t *new_item = malloc(sizeof(op_item_t));
     new_item->nb = nb;
-    new_item->str = str ? my_strdup(str) : my_strdup("Error!!");
+    new_item->str = IS_NULL(str);
     new_item->next = this->top;
     this->top = new_item;
     this->lenght++;

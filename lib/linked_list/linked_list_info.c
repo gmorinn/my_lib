@@ -32,12 +32,10 @@ my_bool search_element(char *var, list_t *a)
     return false;
 }
 
-int list_lenght(list_t *li)
+int list_lenght(list_t *a)
 {
-    int size = 0;
-    while (!(IS_LIST(li))) {
-        ++size;
-        li = li->next;
-    }
-    return size;
+    int x = 0;
+    for (; !check_list(a); x++)
+        a = a->next;
+    return x;
 }

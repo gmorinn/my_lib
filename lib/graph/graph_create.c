@@ -11,7 +11,7 @@ graph_t *new_graph(int vertices, my_bool is_oriented)
 {
     graph_t *element;
 
-    element = malloc(sizeof(graph_t));
+    element = MALLOC(element, sizeof(graph_t));
     element->is_oriend = is_oriented;
     element->nb_vertices = vertices;
     element->tab_neighbours = malloc(vertices * sizeof(g_adjency_t));

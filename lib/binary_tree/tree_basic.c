@@ -23,7 +23,7 @@ void rm_tree(tree_t *tr)
         return;
     rm_tree(tr->right);
     rm_tree(tr->left);
-    free(tr);
+    FREE(tr);
 }
 
 int nb_node_tree(tree_t *tr)

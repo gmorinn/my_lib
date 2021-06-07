@@ -19,9 +19,9 @@ list_t *new_list(void)
     return (NULL);
 }
 
-void display(list_t **a)
+void display(list_t *a)
 {
-    list_t *tmp = (*a);
+    list_t *tmp = a;
     while (tmp != NULL) {
         my_printf("%s\n", tmp->str);
         tmp = tmp->next;

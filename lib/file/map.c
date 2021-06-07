@@ -25,7 +25,7 @@ char *open_map(char *path)
     if ((fd = file_error(path)) < 0)
         return (NULL);
     stat(path, &buff);
-    file = malloc(sizeof(char) * (buff.st_size + 1));
+    file = MALLOC(file, sizeof(char) * (buff.st_size + 1));
     read(fd, file, buff.st_size);
     file[buff.st_size] = '\0';
     close(fd);

@@ -27,6 +27,7 @@ typedef int my_bool;
 #define MALLOC(src, size) src = malloc(size); if (!src) \
                         return (my_putstr("ERROR MALLOC\n"), NULL);
 #define FREE(var) if (var == NULL) return; free(var); var = NULL;
+#define IS_NULL(str) str ? my_strdup(str) : my_strdup("Error!!");
 
 void my_putchar(char c);
 int	my_pow(int nb, int pow);
