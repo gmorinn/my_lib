@@ -9,14 +9,11 @@
 
 int main(void)
 {
-    int tab[] = {2, 52, 6, 42, 5, 541, 53};
+    int tab[] = {2, 52, 6, 5};
     list_t *a = new_list();
-    for (int i = 0; i < 7; i++)
-        a = put_nb(a, tab[i]);
+    for (int i = 0; i < 4; i++)
+        a = ll_insert_nb_end(a, tab[i]);
     ll_display_nb(a);
-    list_t *x = search_nb(a, 500);
-    my_printf("SIZE = %d\n", ll_max(a));
-    my_printf("NB OF 42 = %d\n", x ? x->nb : 84);
     rm_list(&a);
     return 0;
 }

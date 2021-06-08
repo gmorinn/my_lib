@@ -25,7 +25,7 @@ list_t *copylist(list_t *head);
 my_bool check_list(list_t *li);
 list_t *new_list(void);
 void display(list_t *a);
-list_t *put_nb(list_t *a, int tab);
+list_t *ll_insert_nb_end(list_t *a, int tab);
 list_t *rm_element(list_t *li);
 void rm_list(list_t **li);
 void ll_display_nb(list_t *a);
@@ -39,5 +39,7 @@ my_bool search_element(char *var, list_t *a);
 int position_str(list_t *a, char *str);
 int ll_max(list_t *a);
 list_t *search_nb(list_t *a, int key);
+list_t *ll_insert_nb_begin(list_t *a, int nb);
+void ll_insert_nb_at_pos(list_t *a, int x, int index);
 
 #endif /* !LINKED_LIST_H_ */

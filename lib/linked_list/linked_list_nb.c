@@ -25,21 +25,6 @@ int ll_sum(list_t *a)
     return res;
 }
 
-list_t *put_nb(list_t *a, int tab)
-{
-    list_t *tmp = new_list();
-    list_t *element = MALLOC(element, sizeof(list_t));
-    element->nb = tab;
-    element->next = NULL;
-    if (IS_LIST(a))
-        return (element);
-    tmp = a;
-    while (!(IS_LIST(tmp->next)))
-        tmp = tmp->next;
-    tmp->next = element;
-    return (a);
-}
-
 int ll_max(list_t *a)
 {
     static int nb = -32768;

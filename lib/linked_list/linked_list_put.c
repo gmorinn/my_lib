@@ -38,7 +38,7 @@ list_t *put_middle(list_t *a, char *str, int pos)
     list_t *current;
     list_t *new = MALLOC(new, sizeof(list_t));
     new->str = str;
-    for (current = a; !IS_LIST(current); i += 1) {
+    for (current = a; !IS_LIST(current); i++) {
         if (i >= pos)
             break;
         prev = current;
