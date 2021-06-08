@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "lib.h": "c",
-        "stat.h": "c",
-        "hash_table.h": "c",
-        "linked_list.h": "c",
-        "printf.h": "c"
-    }
-}
